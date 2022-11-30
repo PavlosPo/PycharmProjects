@@ -4,7 +4,7 @@ import datetime
 import openpyxl
 import random
 
-NUM_OF_NUMBERS = 4  # HOW MANY NUMBERS YOU WANT TO RANDOMLY GENERATE AS LUCKY ONES ?
+NUM_OF_NUMBERS = 3 # HOW MANY NUMBERS YOU WANT TO RANDOMLY GENERATE AS LUCKY ONES ?
 lucky_numbers = 0
 file_name = 'kino_2021_09.xlsx'
 
