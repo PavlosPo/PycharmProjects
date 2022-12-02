@@ -1,0 +1,4 @@
+Create a flashCard to learn english via greek.
+Wiki Frequency lists of words.
+https://github.com/hermitdave/FrequencyWords
+in google sheets use the formula =GOOGLETRANSLATE( #, "en", "gr" )
