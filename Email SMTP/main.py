@@ -5,7 +5,7 @@ import datetime as dt
 import random
 import calendar
 
-emails = ["paulospoulos6@gmail.com", "paulospoulos7@gmail.com"]
+emails = ["paulospoulos6@gmail.com", "vasiraptis@gmail.com"]
 password = "xhgyknjsahpyjaqb"
 now = dt.date.today()
 day_of_week = calendar.day_name[now.weekday()]
