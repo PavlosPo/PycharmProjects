@@ -6,7 +6,6 @@ import random
 import calendar
 
 emails = ["paulospoulos6@gmail.com", "paulospoulos7@gmail.com"]
-receiver_email = "pavlos.poulos@outlook.com"
 password = "xhgyknjsahpyjaqb"
 now = dt.date.today()
 day_of_week = calendar.day_name[now.weekday()]
@@ -18,8 +17,9 @@ def send_email(list_of_emails):
     with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
         connection.starttls()
         connection.login(user=sender_email, password=password)
+        # Loops each email
         for email in list_of_emails:
-            connection.sendmail(from_addr=receiver_email,
+            connection.sendmail(from_addr=sender_email,
                                 to_addrs=email,
                                 msg="Subject:Motivational Quote\n\n"
                                     f"Happy {day_of_week}!\n{motivational_quote}")
