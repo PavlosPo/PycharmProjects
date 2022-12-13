@@ -1,15 +1,16 @@
 import requests
 import datetime as dt
 from twilio.rest import Client
+import os
 
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
-STOCK_API_KEY = "###################"
-NEWS_API_KEY = "#############################"
-TWILIO_SID = "###########################"
-TWILIO_AUTH_TOKEN = "###########################"
-TWILIO_PHONE = "##########"
-MY_PHONE = "##########"
+STOCK_API_KEY = "####################"
+NEWS_API_KEY = "######################"
+TWILIO_SID = "######################"
+TWILIO_AUTH_TOKEN = "#######################"
+TWILIO_PHONE = "+###########"
+MY_PHONE = "+#######"
 
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 STOCK_PARAMETERS = {
