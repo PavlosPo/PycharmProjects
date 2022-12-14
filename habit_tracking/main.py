@@ -1,6 +1,9 @@
 # HTTP Requests
 
 import requests
+from datetime import datetime as dt
+
+
 USERNAME = "pavlosp"
 TOKEN = "hjb32phbobgj"
 GRAPH_ID = "graph1"
@@ -34,13 +37,25 @@ headers = {
 
 
 # Creating a pixel
-
 pixel_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}"
 
+today = dt(year=2022, month=12, day=13)
+# print(today.strftime("%Y%m%d"))
+
 pixel_config = {
-    "date": "20221214",
-    "quantity": "3.5",
+    "date": today.strftime("%Y%m%d"),
+    "quantity": "3",
 }
 
 response = requests.post(url=pixel_endpoint, json=pixel_config, headers=headers)
+print(response.text)
+
+# Updating a pixel
+day_to_change = dt(year=2022, month=12, day=13).strftime("%Y%m%d")
+pixel_update_enpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH_ID}/{day_to_change}"
+pixel_update_config = {
+    "quantity": "3.2",
+}
+
+response = requests.put(url=pixel_update_enpoint, json=pixel_update_config, headers=headers)
 print(response.text)
