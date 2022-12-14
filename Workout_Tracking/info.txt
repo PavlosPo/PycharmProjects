@@ -1,0 +1,18 @@
+EXERCISE_HEADERS = {
+    "x-app-id": "7f97d6fe",
+    "x-app-key": "36a888feda13bb695fe552e876c66b37",
+    "x-remote-user-id": "0"
+}
+
+exercise_answer = input("Tell me what exercise you did: ")
+EXERCISE_CONFIG = {
+    "query": exercise_answer,
+    "gender": "male",
+    "weight_kg": 78,
+    "height_cm": 177,
+    "age": 23
+}
+SHEETY_HEADERS = {
+    "Authorization": "Bearer AHKsisndk63ISDNAKismLP2847dfggf",
+    "Content-Type": "application/json",
+}
