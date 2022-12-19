@@ -47,6 +47,6 @@ row_to_add = {
             }
     }
 # Sheety API HTTP Post request
-response = requests.post(url=SHEET_ENDPOINT, json=row_to_add,headers=SHEETY_HEADERS)
+response = requests.post(url=SHEET_ENDPOINT, json=row_to_add, headers=SHEETY_HEADERS)
 response.raise_for_status()
 print(response.status_code)
