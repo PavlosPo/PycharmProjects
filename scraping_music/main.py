@@ -30,13 +30,16 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=CLIENT_ID,
 # results = sp.search(q=query, type='track')
 # uri_track = results['tracks']['items'][-1]['uri']
 
+year = date.split("-")[0]  # Takes the Year
 songs = [tag.find(name="h3", id="title-of-a-story").getText().strip() for tag in tags]
 artists = [tag.find(name="span", class_="c-label").getText().strip() for tag in tags]
 user_id = sp.current_user()['id']
 uri_track = []
 for index in range(len(songs)):
-    query = f"artist:{artists[index]} track:{songs[index]}"
-    result = sp.search(q=query, type='track')
-    uri_track.append(result['tracks']['items']['uri'])
-
+    query = f"track:{songs[index]} year:{year}"
+    try:
+        result = sp.search(q=query, type='track')
+        uri_track.append(result['tracks']['items'][0]['uri'])
+    except:
+        print(f"*********\nSong: {songs[index]}\nArtist: {artists[index]}\nDoesn't Exists, Skipped.\n*********")
 pprint(uri_track)
