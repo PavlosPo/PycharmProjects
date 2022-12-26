@@ -10,6 +10,8 @@ date = input("Which year do you want to travel to? \nType the date in this forma
 
 url_end = url + str(date)
 
+CLIENT_ID = "92fdb96a4f754c86b57cdd7b1cac2fe1"
+CLIENT_SECRET = "34819680ca934d7e8158ea34641f9e45"
 
 playlist_name = f"Billboard Top 100 {date}"
 description = "Top 100 songs of that time period, based on billboard!"
