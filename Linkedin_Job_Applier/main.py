@@ -35,19 +35,23 @@ def apply_to_jobs():
         return jobs
 
     def click_and_fill_jobs():
-        telephone = driver.find_element(by=By.CLASS_NAME, value="jobs-easy-apply-form-section__grouping")
+        driver.implicitly_wait(3)
+        # Finds the telephone field
+        telephone = driver.find_element(by=By.CLASS_NAME, value='artdeco-text-input--input')
         telephone.send_keys("6940820115")
-        follow_check = driver.find_element(by=By.ID, value="follow-company-checkbox")
-        follow_check.click()
 
     jobs = find_jobs()
     for index, job in enumerate(jobs):
         time.sleep(1.5)
-        easy_apply = job.find_element(by=By.XPATH,
-                                      value='//*[@id="main"]/div/section[2]/div/div[2]/div[1]/div/div[1]/div/div[1]/div[1]/div[3]/div/div/div')
+
+        # Apply Button
+        easy_apply = job.find_element(by=By.CLASS_NAME, value='jobs-apply-button')
         print("Found the Button")
         easy_apply.click()
+        print("Pressed the Button")
+
         click_and_fill_jobs()
+
 
 
 login_in()
