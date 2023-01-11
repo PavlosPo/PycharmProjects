@@ -14,7 +14,9 @@ driver.get("https://www.linkedin.com/home")
 def login_in(driver=driver):
     time.sleep(1)
     email = driver.find_element(by=By.ID, value="session_key")
+    email.send_keys("paulospoulos6@yahoo.com")
     password = driver.find_element(by=By.ID, value="session_password")
+    password.send_keys("poulos@147258369")
     sign_in = driver.find_element(by=By.CLASS_NAME, value="sign-in-form").find_element(by=By.CLASS_NAME,
                                                                                        value="sign-in-form__submit-button")
     sign_in.click()
