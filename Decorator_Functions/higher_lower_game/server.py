@@ -11,38 +11,21 @@ def create_headline():
     return msg
 
 
-def generate_colors():
-    def wrapper(*args, **kwargs):
-        color = random.choice([
-            'AliceBlue',
-            'Beige',
-            'BlueViolet',
-            'Brown',
-            'Coral',
-            'Crimson',
-            'Cyan',
-            'DarkGreen'])
-        return f"<h1 color={color}" + args[0] + "</h1>"
-
-    return wrapper
-
-
-random_nummber = random.randint(1, 9)
-
-
-@app.route("/<int:number_givven>")
-# @generate_colors()
-def game(number_givven):
-    print(random_nummber)
-    if number_givven == random_nummber:
-        return "You Did it! You found me!!"
-    elif number_givven < random_nummber:
-        return "Too low!! Try Again!"
-    elif number_givven > random_nummber:
-        return "Too high!! Try Again"
-
-
+@app.route("/<int:number_given>")
+def game(number_given):
+    # print(random_nummber)
+    # print(number_given)
+    if number_given == random_nummber:
+        return "<h1 style='color:green' >You Did it! You found me!!</h1>" \
+               "<img src='https://media.giphy.com/media/dpSrm4cwUmCeQ/giphy.gif'>"
+    elif number_given < int(random_nummber):
+        return "<h1 style='color: red'>Too low!! Try Again!</h1>" \
+               "<img src='https://media.giphy.com/media/VeB9ieebylsaN5Jw8p/giphy.gif'>"
+    elif number_given > int(random_nummber):
+        return "<h1 style='color: purple'>Too high!! Try Again<h1>" \
+               "<img src='https://media.giphy.com/media/3o7527pa7qs9kCG78A/giphy.gif'>"
 create_headline()
 
 if __name__ == "__main__":
+    random_nummber = random.randint(1, 9)
     app.run(debug=True)
