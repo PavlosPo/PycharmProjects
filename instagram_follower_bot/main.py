@@ -54,7 +54,7 @@ class InstaFollower:
         self.driver.get("https://www.instagram.com/wildcamping_gr/")
         first_follow_button = self.WebDriverWait(by_method=By.TAG_NAME, value="button")
         first_follow_button.click()
-        print('pressed the follow button')
+        print('Pressed the follow button')
         time.sleep(100)
 
 
