@@ -27,10 +27,7 @@ NEWS_PARAMETERS = {
     'apiKey': NEWS_API_KEY
 }
 
-# # STEP 1: Use https://newsapi.org/docs/endpoints/everything When STOCK price increase/decreases by 5% between
-# yesterday and the day before yesterday then print("Get News"). HINT 1: Get the closing price for yesterday and the
-# day before yesterday. Find the positive difference between the two prices. e.g. 40 - 20 = -20, but the positive
-# difference is 20. HINT 2: Work out the value of 5% of yerstday's closing stock price.
+
 
 
 stock_data = requests.get(STOCK_ENDPOINT, params=STOCK_PARAMETERS)
@@ -94,6 +91,7 @@ if alert_is_on:
     # Creates the messages list for sending it to SMS
     messages = [f""""{COMPANY_NAME}: {up_down} {prcnt_diff}%\nHeadline: {article['title']}\nBrief: {article['description']}""" for article in first_3_articles]
 else:
+    messages = []
     pass
 
 # STEP 3: Use twilio.com/docs/sms/quickstart/python
